@@ -75,6 +75,7 @@ export function formatAmount(amount: number): string {
   return formatter.format(amount);
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const parseStringify = (value: any) => JSON.parse(JSON.stringify(value));
 
 export const removeSpecialCharacters = (value: string) => {
@@ -134,7 +135,6 @@ export function countTransactionCategories(
 ): CategoryCount[] {
   const categoryCounts: { [category: string]: number } = {};
   let totalCount = 0;
-
   // Iterate over each transaction
   transactions &&
     transactions.forEach((transaction) => {
