@@ -1,65 +1,3 @@
-// import React, { useCallback, useEffect, useState } from "react";
-// import { Button } from "./ui/button";
-// import { useRouter } from "next/navigation";
-// import {
-//   PlaidLinkOnSuccess,
-//   PlaidLinkOptions,
-//   usePlaidLink,
-// } from "react-plaid-link";
-// import {
-//   createLinkToken,
-//   exchangePublicToken,
-// } from "@/lib/actions/user.actions";
-// const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
-//   const [token, setToken] = useState("");
-//   const router = useRouter();
-//   useEffect(() => {
-//     const getLinkToken = async () => {
-//       const data = await createLinkToken(user);
-//       setToken(data?.LinkToken);
-//     };
-//     getLinkToken();
-//   }, [user]);
-
-//   const onSuccess = useCallback<PlaidLinkOnSuccess>(
-//     async (public_token: string) => {
-//       await exchangePublicToken({
-//         publicToken: public_token,
-//         user,
-//       });
-//       router.push("/");
-//     },
-//     // eslint-disable-next-line react-hooks/exhaustive-deps
-//     [user]
-//   );
-
-//   const config: PlaidLinkOptions = {
-//     token,
-//     onSuccess,
-//   };
-
-//   const { open, ready } = usePlaidLink(config);
-
-//   return (
-//     <>
-//       {variant === "primary" ? (
-//         <Button
-//           className="plaidlink-primary"
-//           onClick={() => open()}
-//           disabled={!ready}
-//         >
-//           Connect bank
-//         </Button>
-//       ) : variant === "ghost" ? (
-//         <Button>Connect bank</Button>
-//       ) : (
-//         <Button>Connect bank</Button>
-//       )}
-//     </>
-//   );
-// };
-
-// export default PlaidLink;
 import React, { useCallback, useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import {
@@ -129,7 +67,7 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
             width={24}
             height={24}
           />
-          <p className="hiddenl text-[16px] font-semibold text-black-2 xl:block">
+          <p className="hidden text-[16px] font-semibold text-black-2 xl:block">
             Connect bank
           </p>
         </Button>
